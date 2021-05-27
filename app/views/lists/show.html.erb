@@ -1,0 +1,23 @@
+<h1>Show a sinllge list</h1>
+
+<h3>Add a bookmark to this list</h3>
+<h1><%= @list.name %></h1>
+
+<% @list.bookmarks.each do |b| %>
+<%= b.comment %>
+<%= b.movie_id %>
+<%= b.list_id %>
+<%= link_to "Delete this bookmark", bookmark_path(b), method: :delete %>
+<br>
+<% end %>
+
+
+<%# <%= @list.movies %>
+<%# gives me the active record %>
+<%# i have access to the movie id %>
+
+<h1>Cannot add a new bookmark to a moviw that alwready exists here!</h1>
+
+
+<%= link_to "Add a bookmark", new_list_bookmark_path(@list) %>
+<%= link_to "Home", lists_path %>
