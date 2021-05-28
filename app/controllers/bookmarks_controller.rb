@@ -9,10 +9,11 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(strong_params)
     @list = List.find(params[:list_id])
     @bookmark.list = @list
-    @bookmark.save
-    redirect_to list_path(@list)
-
-    #add an if and else here for if it saves or not
+    if @bookmark.save
+      redirect_to list_path(@list)
+    else
+      render "new"
+    end
   end
 
   def destroy

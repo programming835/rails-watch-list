@@ -1,0 +1,11 @@
+.main-banner{
+    height: 70vh;
+    width: 100vw;
+    background-image: asset-url("/assets/cinema.jpg");
+    filter: grayscale(20%);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

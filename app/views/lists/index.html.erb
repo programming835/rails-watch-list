@@ -1,9 +1,21 @@
-<h1>Hello World</h1>
-<h2>All the lists</h2>
+<div class="main-banner">
+  <div>
+    <h1 class="title">Save any kind of movies</h1>
+    <div  class="rolling">
+      <h3>
+        <span class="title" id="banner-typed-text"></span>
+      </h3>
+    </div>
+  </div>
+</div>
 
-<% @lists.each do |list| %>
-  <h3><%= list.name %></h3>
-  <%= link_to "Details", list_path(list) %>
-<% end %>
+<div class="container list-box">
+  <% @lists.each do |list| %>
+    <h3><%= list.name %></h3>
+   <%= link_to "Details", list_path(list) %>
+  <% end %>
+</div>
+
+
   
 <%= link_to "Add a new list", new_list_path %>
