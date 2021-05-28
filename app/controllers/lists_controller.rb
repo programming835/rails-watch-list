@@ -21,10 +21,18 @@ class ListsController < ApplicationController
     end
   end
 
+  # clear up the list.find!
+
+  def destroy
+    @list = List.find(params[:id])
+    @list.delete
+    redirect_to lists_path
+  end
+
   private
 
   def strong_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 
 end
